@@ -16,10 +16,10 @@
     :root {
       --primary-gold: #d4af37;
       --primary-green: #0d5e33;
+      --primary-ruby: #c2185b;
       --secondary-gold: #e6c47a;
       --cream-bg: #fdf6e3;
       --dark-green: #063920;
-      --primary-ruby: #c2185b;
     }
 
     * {
@@ -35,6 +35,7 @@
       line-height: 1.6;
       position: relative;
       overflow-x: hidden;
+      padding-bottom: 2rem;
     }
 
     body::before {
@@ -119,59 +120,76 @@
     .pattern-top { top: 0; transform: scaleY(-1); }
     .pattern-bottom { bottom: 0; }
 
-    /* Typography & Layout */
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 0 1.2rem;
+    }
+
+    /* Header */
     .header {
-      padding: 3rem 1.5rem 2rem;
+      padding: 2.5rem 0 1.8rem;
       text-align: center;
       position: relative;
     }
-.couple-names {
-  font-family: 'Great Vibes', cursive;
-  font-size: 5.2rem;
-  background: linear-gradient(90deg, var(--primary-green), var(--primary-gold), var(--primary-ruby));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin: 1.5rem 0;
-  text-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
-  letter-spacing: 2px;
-}
+
+    .couple-names {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4.8rem;
+      background: linear-gradient(90deg, var(--primary-green), var(--primary-gold), var(--primary-ruby));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin: 1.2rem 0;
+      text-shadow: 0 3px 10px rgba(212, 175, 55, 0.25);
+      letter-spacing: 1px;
+    }
+
     .and-symbol {
       display: block;
-      font-size: 2.8rem;
-      margin: 1.2rem 0;
+      font-size: 2.6rem;
+      margin: 1rem 0;
       color: var(--primary-gold);
     }
+
     .event-title {
       font-family: 'Amiri', serif;
-      font-size: 2.3rem;
+      font-size: 2.1rem;
       color: var(--dark-green);
-      margin: 1.5rem 0;
+      margin: 1.4rem 0;
       font-weight: 700;
     }
+
     .date-details {
-      font-size: 1.4rem;
-      margin: 1.8rem auto;
+      font-size: 1.3rem;
+      margin: 1.6rem auto;
       max-width: 800px;
-      padding: 1.2rem;
+      padding: 1rem;
       background: rgba(230, 196, 122, 0.15);
       border-radius: 12px;
       border: 1px solid var(--secondary-gold);
     }
 
-    .profile-section {
-      background: rgba(253, 246, 227, 0.8);
+    /* Profile & Event Cards - Unified Style */
+    .profile-section,
+    .event-section {
+      background: rgba(253, 246, 227, 0.85);
       backdrop-filter: blur(8px);
       border-radius: 20px;
-      padding: 2.2rem;
-      margin: 2.8rem auto;
-      max-width: 720px;
-      box-shadow: 0 10px 30px rgba(13, 94, 51, 0.12);
+      padding: 2rem;
+      margin: 2.5rem auto;
+      max-width: 700px;
+      width: 100%;
+      box-shadow: 0 8px 25px rgba(13, 94, 51, 0.1);
       border: 1px solid var(--secondary-gold);
       position: relative;
       overflow: hidden;
     }
-    .profile-section::before {
+
+    .profile-section::before,
+    .event-section::before {
       content: "";
       position: absolute;
       top: 0;
@@ -180,174 +198,204 @@
       height: 5px;
       background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
     }
+
     .profile-img {
-      width: 220px;
-      height: 220px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid var(--primary-gold);
-      margin: 1.5rem auto;
+      margin: 1.2rem auto;
       display: block;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      box-shadow: 0 5px 18px rgba(0,0,0,0.12);
     }
-    .profile-title {
+
+    .profile-title,
+    .event-title-section {
       font-family: 'Amiri', serif;
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: var(--primary-green);
-      margin: 1.2rem 0;
+      margin: 1rem 0;
       position: relative;
       display: inline-block;
     }
-    .profile-title::after {
+
+    .profile-title::after,
+    .event-title-section::after {
       content: "";
       position: absolute;
-      bottom: -8px;
+      bottom: -7px;
       left: 50%;
       transform: translateX(-50%);
-      width: 60px;
+      width: 55px;
       height: 3px;
       background: var(--primary-gold);
     }
+
     .profile-details p {
-      margin: 0.9rem 0;
-      padding-left: 1.6rem;
+      margin: 0.8rem 0;
+      padding-left: 1.5rem;
       position: relative;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
     }
+
     .profile-details p::before {
       content: "•";
       position: absolute;
       left: 0;
       color: var(--primary-gold);
-      font-size: 1.8rem;
+      font-size: 1.7rem;
     }
 
-    .event-section {
-      background: rgba(212, 175, 55, 0.08);
-      border-radius: 18px;
-      padding: 2.2rem;
-      margin: 2.8rem auto;
-      max-width: 800px;
-      border: 1px solid var(--secondary-gold);
+    /* Event-Specific Styles */
+    .event-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.6rem;
+      justify-content: center;
     }
-    .event-title {
-      font-size: 2rem;
+
+    .event-icon {
+      font-size: 2.2rem;
       color: var(--primary-green);
-      margin-bottom: 1.8rem;
+    }
+
+    .event-details {
+      font-size: 1.25rem;
       text-align: center;
-      position: relative;
+      margin-bottom: 1.8rem;
     }
-    .event-title::after {
-      content: "";
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 2px;
-      background: var(--primary-gold);
-    }
+
     .countdown {
       display: flex;
       justify-content: center;
-      gap: 1.4rem;
-      margin: 2rem 0;
+      gap: 1rem;
+      margin: 1.8rem 0;
       flex-wrap: wrap;
     }
+
     .countdown-item {
       background: var(--primary-green);
       color: white;
-      width: 85px;
-      height: 85px;
-      border-radius: 14px;
+      width: 75px;
+      height: 75px;
+      border-radius: 12px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
-      70% { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
-    }
-    .countdown-value {
-      font-size: 2.2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      font-size: 1.8rem;
       font-weight: 700;
     }
+
     .countdown-label {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
+      margin-top: 4px;
+    }
+
+    /* Buttons - Always Centered */
+    .btn-center {
+      display: flex;
+      justify-content: center;
+      margin: 1.4rem 0;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 0.95rem 2rem;
+      padding: 0.9rem 1.8rem;
       border-radius: 50px;
       font-weight: 700;
       text-decoration: none;
       transition: all 0.3s ease;
-      margin-top: 1.2rem;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    .btn-map { background: var(--primary-green); color: white; }
-    .btn-card { background: var(--primary-gold); color: var(--dark-green); }
-    .btn-whatsapp { background: #25D366; color: white; }
-    .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      text-align: center;
     }
 
+    .btn-map {
+      background: var(--primary-green);
+      color: white;
+    }
+
+    .btn-card {
+      background: var(--primary-gold);
+      color: var(--dark-green);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+    }
+
+    /* Quote */
     .blessing-quote {
       background: rgba(13, 94, 51, 0.06);
       border-left: 4px solid var(--primary-gold);
-      padding: 2rem 1.8rem;
-      margin: 2.8rem auto;
-      max-width: 800px;
+      padding: 1.8rem;
+      margin: 2.5rem auto;
+      max-width: 750px;
+      width: 100%;
       font-family: 'Amiri', serif;
-      font-size: 1.45rem;
+      font-size: 1.4rem;
       font-style: italic;
       position: relative;
       text-align: center;
+      border-radius: 0 12px 12px 0;
     }
+
     .blessing-quote::before {
       content: """;
       position: absolute;
-      top: -25px;
+      top: -22px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 5.5rem;
+      font-size: 5rem;
       color: var(--primary-gold);
       opacity: 0.25;
       font-family: serif;
     }
 
+    /* Footer */
     footer {
       text-align: center;
-      padding: 3rem 1rem 2rem;
+      padding: 2.5rem 1rem 1.5rem;
       color: var(--dark-green);
-      font-size: 1.15rem;
-      margin-top: 2rem;
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
       .couple-names { font-size: 3.4rem; }
+      .profile-img { width: 180px; height: 180px; }
+      .countdown-item { width: 65px; height: 65px; font-size: 1.5rem; }
       .event-title { font-size: 1.8rem; }
-      .countdown-item { width: 75px; height: 75px; }
-      .profile-img { width: 190px; height: 190px; }
+      .event-title-section { font-size: 1.8rem; }
+      .date-details { font-size: 1.15rem; padding: 0.9rem; }
+      .profile-section, .event-section { padding: 1.8rem; margin: 2rem auto; }
     }
+
     @media (max-width: 480px) {
-      .couple-names { font-size: 2.7rem; }
-      .countdown-item { width: 65px; height: 65px; }
-      .countdown-value { font-size: 1.7rem; }
-      .profile-img { width: 160px; height: 160px; }
-      .btn { padding: 0.8rem 1.6rem; font-size: 1rem; }
+      .couple-names { font-size: 2.6rem; }
+      .and-symbol { font-size: 2.1rem; }
+      .event-title { font-size: 1.6rem; }
+      .event-title-section { font-size: 1.6rem; }
+      .countdown-item { width: 58px; height: 58px; font-size: 1.3rem; }
+      .countdown-label { font-size: 0.65rem; }
+      .profile-img { width: 150px; height: 150px; }
+      .btn { padding: 0.8rem 1.5rem; font-size: 1rem; }
+      .profile-details p { font-size: 1.1rem; }
     }
   </style>
 </head>
@@ -392,7 +440,7 @@
         <p><strong>Name:</strong> Shaik Masood</p>
         <p><strong>Father:</strong> Shaik Abdul Raheem</p>
         <p><strong>Mother:</strong> Gowsiya</p>
-        <p><strong>Address:</strong> Sangam Colony-2, Mandapeta, East Godavari</p>
+        <p><strong>Address:</strong> Sangam Colony-2, Mandapeta, East Godavari, 9133801421</p>
       </div>
     </div>
 
@@ -407,38 +455,52 @@
       </div>
     </div>
 
+    <!-- Nikah Section -->
     <div class="event-section fade-in">
-      <h3 class="event-title">Nikah Ceremony</h3>
+      <div class="event-header">
+        <i class="fas fa-mosque event-icon"></i>
+        <h3 class="event-title-section">Nikah Ceremony</h3>
+      </div>
       <div class="event-details">
         <p><strong>Date:</strong> Sunday, 21st December 2025</p>
         <p><strong>Venue:</strong> Kapu Kalyana Mandapam, Komaraju Lanka, Ravulapalem</p>
       </div>
       <div class="countdown" id="nikah-countdown"></div>
-      <a href="https://maps.app.goo.gl/TsRJYAdA9DktV2Md7?g_st=aw" target="_blank" class="btn btn-map">
-        <i class="fas fa-map-marker-alt"></i> View Venue
-      </a>
+      <div class="btn-center">
+        <a href="https://maps.app.goo.gl/RCfQWhs69SQgxJha9?g_st=aw" target="_blank" class="btn btn-map">
+          <i class="fas fa-map-marker-alt"></i> View Venue
+        </a>
+      </div>
     </div>
 
+    <!-- Reception Section -->
     <div class="event-section fade-in">
-      <h3 class="event-title">Reception</h3>
+      <div class="event-header">
+        <i class="fas fa-glass-cheers event-icon"></i>
+        <h3 class="event-title-section">Reception</h3>
+      </div>
       <div class="event-details">
         <p><strong>Date:</strong> Monday, 22nd December 2025</p>
         <p><strong>Venue:</strong> Lion's Club Function Hall, Mandapeta</p>
       </div>
       <div class="countdown" id="reception-countdown"></div>
-      <a href="https://maps.app.goo.gl/nwwzxgHhwUUQ5V7DA?g_st=aw" target="_blank" class="btn btn-map">
-        <i class="fas fa-map-marker-alt"></i> View Venue
-      </a>
+      <div class="btn-center">
+        <a href="https://maps.app.goo.gl/nwwzxgHhwUUQ5V7DA?g_st=aw" target="_blank" class="btn btn-map">
+          <i class="fas fa-map-marker-alt"></i> View Venue
+        </a>
+      </div>
     </div>
 
-    <div class="text-center my-5 fade-in">
+    <!-- Download Card -->
+    <div class="btn-center fade-in">
       <h3 class="event-title">Wedding Invitation Card</h3>
-      <a href="https://raw.githubusercontent.com/WeddingInvite/BashaWedsBasheera/refs/heads/main/IMG-20250518-WA0005.jpg" download class="btn btn-card">
+      <a href="https://raw.githubusercontent.com/WeddingInvite/MasoodWedsRehana/refs/heads/main/IMG-20251116-WA0001.jpg" download class="btn btn-card">
         <i class="fas fa-download"></i> Download Card
       </a>
     </div>
 
-    <div class="text-center my-4 fade-in">
+    <!-- WhatsApp -->
+    <div class="btn-center fade-in">
       <h4>Contact for Details</h4>
       <a href="https://wa.me/919133801421" target="_blank" class="btn btn-whatsapp">
         <i class="fab fa-whatsapp"></i> WhatsApp Masood
@@ -455,60 +517,53 @@
   </footer>
 
   <script>
-    // Scroll Animation
     document.addEventListener('DOMContentLoaded', () => {
       const fadeElements = document.querySelectorAll('.fade-in');
-      
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('appear');
           }
         });
-      }, {
-        threshold: 0.15
-      });
+      }, { threshold: 0.1 });
 
       fadeElements.forEach(el => observer.observe(el));
 
-      // Countdown Function
       function createCountdown(id, targetDate, eventName) {
         const container = document.getElementById(id);
-        const intervals = ['Days', 'Hours', 'Minutes', 'Seconds'];
-        
+        const units = ['Days', 'Hours', 'Minutes', 'Seconds'];
         container.innerHTML = '';
-        intervals.forEach(unit => {
-          const item = document.createElement('div');
-          item.className = 'countdown-item';
-          item.innerHTML = `<div class="countdown-value">00</div><div class="countdown-label">${unit}</div>`;
-          container.appendChild(item);
+        
+        units.forEach(u => {
+          const div = document.createElement('div');
+          div.className = 'countdown-item';
+          div.innerHTML = `<div>00</div><div class="countdown-label">${u}</div>`;
+          container.appendChild(div);
         });
 
-        function updateCountdown() {
+        function update() {
           const now = new Date().getTime();
           const target = new Date(targetDate).getTime();
           const diff = target - now;
           
           if (diff <= 0) {
-            container.innerHTML = `<div style="color:var(--primary-green); font-size:1.6rem; width:100%; text-align:center;">${eventName} has commenced!</div>`;
+            container.innerHTML = `<div style="color:var(--primary-green); font-size:1.5rem; width:100%; text-align:center; font-weight:700;">${eventName} has commenced!</div>`;
             return;
           }
           
-          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+          const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const s = Math.floor((diff % (1000 * 60)) / 1000);
           
-          const values = [days, hours, minutes, seconds];
-          const items = container.querySelectorAll('.countdown-value');
-          
-          items.forEach((item, i) => {
-            item.textContent = values[i].toString().padStart(2, '0');
+          const valueEls = container.querySelectorAll('.countdown-item > div:first-child');
+          [d, h, m, s].forEach((val, i) => {
+            valueEls[i].textContent = val.toString().padStart(2, '0');
           });
         }
 
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
+        update();
+        setInterval(update, 1000);
       }
 
       createCountdown("nikah-countdown", "2025-12-21T11:00:00", "Nikah Ceremony");
