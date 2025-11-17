@@ -3,297 +3,517 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Basha ❤️ Basheera - 08.06.2025</title>
+  <title>Masood ❤️ Rehana - Nikah 21.12.2025</title>
   <link rel="shortcut icon" href="favicon.png" type="image/png">
-
+  
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Arvo|Dancing+Script&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Additional Styles -->
-	<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
-	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dancing+Script&amp;display=swap'>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css">
-  <link rel="stylesheet" href="./css/responsive-clock.css">
-  <link rel="stylesheet" href="./css/icomoon.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Amiri:wght@400;700&family=Cairo:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
+    :root {
+      --primary-gold: #d4af37;
+      --primary-green: #0d5e33;
+      --secondary-gold: #e6c47a;
+      --cream-bg: #fdf6e3;
+      --dark-green: #063920;
+      --primary-ruby: #c2185b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(white, rgb(39, 152, 208), rgb(248, 197, 197), rgb(151, 206, 226));
+      background: linear-gradient(135deg, var(--cream-bg) 0%, #f9f4e8 100%);
+      color: var(--dark-green);
+      font-family: 'Cairo', sans-serif;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 20%);
+      z-index: -2;
+    }
+
+    /* Floating Love Symbols */
+    .floating {
+      position: fixed;
+      opacity: 0.6;
+      z-index: -1;
+      pointer-events: none;
+      animation: float 15s infinite ease-in-out;
+    }
+
+    .floating:nth-child(1) { top: 10%; left: 5%; font-size: 1.8rem; color: var(--primary-gold); animation-delay: 0s; }
+    .floating:nth-child(2) { top: 20%; right: 10%; font-size: 1.5rem; color: var(--primary-green); animation-delay: 2s; }
+    .floating:nth-child(3) { bottom: 25%; left: 15%; font-size: 2rem; color: var(--primary-gold); animation-delay: 4s; }
+    .floating:nth-child(4) { bottom: 10%; right: 20%; font-size: 1.7rem; color: var(--primary-green); animation-delay: 6s; }
+    .floating:nth-child(5) { top: 40%; left: 25%; font-size: 1.4rem; color: var(--secondary-gold); animation-delay: 1s; }
+    .floating:nth-child(6) { top: 60%; right: 30%; font-size: 1.6rem; color: var(--primary-gold); animation-delay: 3s; }
+
+    @keyframes float {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(20px, -30px) rotate(5deg); }
+      50% { transform: translate(-15px, 20px) rotate(-5deg); }
+      75% { transform: translate(10px, -10px) rotate(3deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
+    }
+
+    /* Scroll Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Floral Corner Accents */
+    .floral-corner {
+      position: absolute;
+      font-size: 3rem;
+      opacity: 0.15;
+      color: var(--primary-green);
+      z-index: -1;
+    }
+    .floral-tl { top: 20px; left: 20px; }
+    .floral-tr { top: 20px; right: 20px; transform: scaleX(-1); }
+    .floral-bl { bottom: 20px; left: 20px; transform: scaleY(-1); }
+    .floral-br { bottom: 20px; right: 20px; transform: scale(-1); }
+
+    /* Islamic Pattern Border */
+    .islamic-border {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.12;
+    }
+    .pattern-line {
+      position: absolute;
+      width: 100%;
+      height: 60px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="M0,10 Q25,0 50,10 T100,10" stroke="%23d4af37" stroke-width="2" fill="none"/></svg>') repeat-x;
+    }
+    .pattern-top { top: 0; transform: scaleY(-1); }
+    .pattern-bottom { bottom: 0; }
+
+    /* Typography & Layout */
+    .header {
+      padding: 3rem 1.5rem 2rem;
       text-align: center;
+      position: relative;
     }
-
-    .title h1 {
-      font-family: "Dancing Script", cursive;
-      font-weight: bold;
-      font-size: 65px;
-      color: #da400d;
-      margin: 30px 0;
-      text-shadow: 0 0 10px white;
+.couple-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 5.2rem;
+  background: linear-gradient(90deg, var(--primary-green), var(--primary-gold), var(--primary-ruby));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 1.5rem 0;
+  text-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+  letter-spacing: 2px;
+}
+    .and-symbol {
+      display: block;
+      font-size: 2.8rem;
+      margin: 1.2rem 0;
+      color: var(--primary-gold);
     }
-
-    h2, h3 {
-      font-family: "Dancing Script", cursive;
-      font-weight: bold;
-      color: #c2185b;
+    .event-title {
+      font-family: 'Amiri', serif;
+      font-size: 2.3rem;
+      color: var(--dark-green);
+      margin: 1.5rem 0;
+      font-weight: 700;
     }
-
-    h3 {
-      font-size: 32px;
-font-weight: bold;
-      color: #fc1717;
-    }
-
-    .lead, .dance-med, blockquote p {
-      font-size: 1.25rem;
-      font-weight: 500;
+    .date-details {
+      font-size: 1.4rem;
+      margin: 1.8rem auto;
+      max-width: 800px;
+      padding: 1.2rem;
+      background: rgba(230, 196, 122, 0.15);
+      border-radius: 12px;
+      border: 1px solid var(--secondary-gold);
     }
 
     .profile-section {
-      background: url('https://i.pinimg.com/originals/6d/55/63/6d5563be5c149fdd7879e20eae3d1a93.jpg') no-repeat center;
-      background-size: cover;
-      padding: 2rem;
-      border-radius: 15px;
-      color: #4a148c;
-      margin: 2rem auto;
-      max-width: 700px;
+      background: rgba(253, 246, 227, 0.8);
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      padding: 2.2rem;
+      margin: 2.8rem auto;
+      max-width: 720px;
+      box-shadow: 0 10px 30px rgba(13, 94, 51, 0.12);
+      border: 1px solid var(--secondary-gold);
+      position: relative;
+      overflow: hidden;
     }
-
+    .profile-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+    }
     .profile-img {
-      width: 250px;
-      border-radius: 15px;
-      margin: 1rem auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary-gold);
+      margin: 1.5rem auto;
       display: block;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    .profile-title {
+      font-family: 'Amiri', serif;
+      font-size: 2.2rem;
+      color: var(--primary-green);
+      margin: 1.2rem 0;
+      position: relative;
+      display: inline-block;
+    }
+    .profile-title::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--primary-gold);
+    }
+    .profile-details p {
+      margin: 0.9rem 0;
+      padding-left: 1.6rem;
+      position: relative;
+      font-size: 1.25rem;
+    }
+    .profile-details p::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--primary-gold);
+      font-size: 1.8rem;
     }
 
-    .btn-card, .btn-whatsapp {
-      margin-top: 1rem;
-      padding: 10px 20px;
-      font-size: 1rem;
+    .event-section {
+      background: rgba(212, 175, 55, 0.08);
+      border-radius: 18px;
+      padding: 2.2rem;
+      margin: 2.8rem auto;
+      max-width: 800px;
+      border: 1px solid var(--secondary-gold);
     }
-
-    .btn-card {
-      background-color: #ec407a;
-      color: white;
+    .event-title {
+      font-size: 2rem;
+      color: var(--primary-green);
+      margin-bottom: 1.8rem;
+      text-align: center;
+      position: relative;
     }
-
-    .btn-whatsapp {
-      background-color: #25D366;
-      color: white;
+    .event-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 2px;
+      background: var(--primary-gold);
     }
-
     .countdown {
-      font-size: 2.5rem;
-      color: #d81b60;
-      font-weight: bold;
-      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.4rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    .countdown-item {
+      background: var(--primary-green);
+      color: white;
+      width: 85px;
+      height: 85px;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+      70% { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+    }
+    .countdown-value {
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+    .countdown-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .countdown-labels span {
-      font-weight: bold;
-      color: #6a1b9a;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.95rem 2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-top: 1.2rem;
+      font-size: 1.15rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .btn-map { background: var(--primary-green); color: white; }
+    .btn-card { background: var(--primary-gold); color: var(--dark-green); }
+    .btn-whatsapp { background: #25D366; color: white; }
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
     }
 
-    blockquote {
-      border-left: 4px solid #d81b60;
-      padding-left: 1rem;
-      color: #6a1b9a;
-      margin: 2rem auto;
-      max-width: 700px;
+    .blessing-quote {
+      background: rgba(13, 94, 51, 0.06);
+      border-left: 4px solid var(--primary-gold);
+      padding: 2rem 1.8rem;
+      margin: 2.8rem auto;
+      max-width: 800px;
+      font-family: 'Amiri', serif;
+      font-size: 1.45rem;
+      font-style: italic;
+      position: relative;
+      text-align: center;
+    }
+    .blessing-quote::before {
+      content: """;
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 5.5rem;
+      color: var(--primary-gold);
+      opacity: 0.25;
+      font-family: serif;
     }
 
     footer {
-      margin-top: 4rem;
-      padding: 1rem;
-      color: #6a1b9a;
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      color: var(--dark-green);
+      font-size: 1.15rem;
+      margin-top: 2rem;
     }
 
-    .tile__img img {
-      display: block;
-      margin: 1rem auto;
-      max-width: 100%;
+    /* Responsive */
+    @media (max-width: 768px) {
+      .couple-names { font-size: 3.4rem; }
+      .event-title { font-size: 1.8rem; }
+      .countdown-item { width: 75px; height: 75px; }
+      .profile-img { width: 190px; height: 190px; }
+    }
+    @media (max-width: 480px) {
+      .couple-names { font-size: 2.7rem; }
+      .countdown-item { width: 65px; height: 65px; }
+      .countdown-value { font-size: 1.7rem; }
+      .profile-img { width: 160px; height: 160px; }
+      .btn { padding: 0.8rem 1.6rem; font-size: 1rem; }
     }
   </style>
-
-
-
 </head>
 <body>
+  <!-- Floating Love Symbols -->
+  <div class="floating"><i class="fas fa-heart"></i></div>
+  <div class="floating"><i class="fas fa-moon"></i></div>
+  <div class="floating"><i class="fas fa-heart"></i></div>
+  <div class="floating"><i class="fas fa-star"></i></div>
+  <div class="floating"><i class="fas fa-heart"></i></div>
+  <div class="floating"><i class="fas fa-flower"></i></div>
 
-<div class="untoldcoding-falling"></div>
-	<img src="https://i.postimg.cc/mDD9D8Zd/Untitled-design-1-removebg-preview.png" alt="image-top-right"
-		class="top-right-decoration">
-	<img src="https://i.postimg.cc/P5X5TN5y/Untitled-design-removebg-preview-1.png" alt="image-top-left"
-		class="top-left-decoration">
-	<section id="media"></section>
+  <!-- Floral Corners -->
+  <div class="floral-corner floral-tl">✿</div>
+  <div class="floral-corner floral-tr">✿</div>
+  <div class="floral-corner floral-bl">✿</div>
+  <div class="floral-corner floral-br">✿</div>
 
-  <div class="container py-5">
-    <div class="title">
-      <h1>Masood</h1>
-      <h2>&</h2>
-      <h1>Rehana</h1>
-      <h3>Are getting married</h3>
-      <p>
-        On <span class="date">21 December 2025</span>, at <span class="place">Kapu Kalyana Mandapam, Komaraju Lanka, Ravulapalem</span>. Sunday.
-      </p>
-    </div>
+  <!-- Islamic Borders -->
+  <div class="islamic-border">
+    <div class="pattern-line pattern-top"></div>
+    <div class="pattern-line pattern-bottom"></div>
+  </div>
 
-    <!-- Animated Hearts -->
-    <div class="body2 my-3">
-      <!-- SVG heart animation x4 -->
-      <svg width="50" height="50" viewBox="0 0 200 200">
-        <g transform="translate(100 100)">
-          <path transform="translate(-50 -50)" fill="tomato"
-            d="M92.71,7.27c-9.71-9.69-25.46-9.69-35.18,0L50,14.79l-7.54-7.52C32.75-2.42,17-2.42,7.29,7.27c-9.71,9.69-9.71,25.41,0,35.1L50,85l42.71-42.63C102.43,32.68,102.43,16.96,92.71,7.27z">
-          </path>
-          <animateTransform attributeName="transform" type="scale" values="1;1.5;1.25;1.5;1.5;1;" dur="1s" repeatCount="indefinite" additive="sum"/>
-        </g>
-      </svg>
-<svg width="50" height="50" viewBox="0 0 200 200">
-        <g transform="translate(100 100)">
-          <path transform="translate(-50 -50)" fill="tomato"
-            d="M92.71,7.27c-9.71-9.69-25.46-9.69-35.18,0L50,14.79l-7.54-7.52C32.75-2.42,17-2.42,7.29,7.27c-9.71,9.69-9.71,25.41,0,35.1L50,85l42.71-42.63C102.43,32.68,102.43,16.96,92.71,7.27z">
-          </path>
-          <animateTransform attributeName="transform" type="scale" values="1;1.5;1.25;1.5;1.5;1;" dur="1s" repeatCount="indefinite" additive="sum"/>
-        </g>
-      </svg>
-<svg width="50" height="50" viewBox="0 0 200 200">
-        <g transform="translate(100 100)">
-          <path transform="translate(-50 -50)" fill="tomato"
-            d="M92.71,7.27c-9.71-9.69-25.46-9.69-35.18,0L50,14.79l-7.54-7.52C32.75-2.42,17-2.42,7.29,7.27c-9.71,9.69-9.71,25.41,0,35.1L50,85l42.71-42.63C102.43,32.68,102.43,16.96,92.71,7.27z">
-          </path>
-          <animateTransform attributeName="transform" type="scale" values="1;1.5;1.25;1.5;1.5;1;" dur="1s" repeatCount="indefinite" additive="sum"/>
-        </g>
-      </svg>
-<svg width="50" height="50" viewBox="0 0 200 200">
-        <g transform="translate(100 100)">
-          <path transform="translate(-50 -50)" fill="tomato"
-            d="M92.71,7.27c-9.71-9.69-25.46-9.69-35.18,0L50,14.79l-7.54-7.52C32.75-2.42,17-2.42,7.29,7.27c-9.71,9.69-9.71,25.41,0,35.1L50,85l42.71-42.63C102.43,32.68,102.43,16.96,92.71,7.27z">
-          </path>
-          <animateTransform attributeName="transform" type="scale" values="1;1.5;1.25;1.5;1.5;1;" dur="1s" repeatCount="indefinite" additive="sum"/>
-        </g>
-      </svg>
-      <!-- Repeat 3 more hearts if needed -->
-    </div>
+  <div class="container">
+    <header class="header fade-in">
+      <h1 class="couple-names">Masood</h1>
+      <span class="and-symbol">&</span>
+      <h1 class="couple-names">Rehana</h1>
+      <h2 class="event-title">Request the Honor of Your Presence at Their Nikah</h2>
+      
+      <div class="date-details fade-in">
+        <p>Sunday, 21st December 2025 | Kapu Kalyana Mandapam, Komaraju Lanka, Ravulapalem</p>
+        <p>Reception: Monday, 22nd December 2025 | Lion's Club Function Hall, Mandapeta</p>
+      </div>
+    </header>
 
-    <!-- Groom Section -->
-    <div class="profile-section">
-      <h3>Groom</h3>
+    <div class="profile-section fade-in">
+      <h3 class="profile-title">Groom</h3>
       <img src="https://raw.githubusercontent.com/WeddingInvite/BashaWedsBasheera/refs/heads/main/cowo.png" alt="Groom" class="profile-img">
-      <p><strong>Name:</strong> Shaik Masood</p>
-      <p><strong>Father:</strong> Shaik Abdul Raheem</p>
-      <p><strong>Mother:</strong> Gowsiya</p>
-      <p><strong>Address:</strong> Sangam Colony-2, Mandapeta, East Godavari, 9849667547</p>
+      <div class="profile-details">
+        <p><strong>Name:</strong> Shaik Masood</p>
+        <p><strong>Father:</strong> Shaik Abdul Raheem</p>
+        <p><strong>Mother:</strong> Gowsiya</p>
+        <p><strong>Address:</strong> Sangam Colony-2, Mandapeta, East Godavari</p>
+      </div>
     </div>
 
-    <!-- Bride Section -->
-    <div class="profile-section">
-      <h3>Bride</h3>
+    <div class="profile-section fade-in">
+      <h3 class="profile-title">Bride</h3>
       <img src="https://raw.githubusercontent.com/WeddingInvite/BashaWedsBasheera/refs/heads/main/cewe.png" alt="Bride" class="profile-img">
-      <p><strong>Name:</strong> Shaik Rehana</p>
-      <p><strong>Father:</strong> Shaik Madina Pacha</p>
-      <p><strong>Mother:</strong> Haseena</p>
-      <p><strong>Address:</strong> Komaraju Lanka</p>
+      <div class="profile-details">
+        <p><strong>Name:</strong> Shaik Rehana</p>
+        <p><strong>Father:</strong> Shaik Madina Pacha</p>
+        <p><strong>Mother:</strong> Haseena</p>
+        <p><strong>Address:</strong> Komaraju Lanka</p>
+      </div>
     </div>
 
-    <h2>Shaik Masood & Shaik Rehana</h2>
-    <p class="lead">Together with their families, joyfully invite you to their Nikah and Reception</p>
-    <p class="dance-med">Join us in our happiness!</p>
-    <div class="profile-img"><img src="./ggg.gif" alt="Celebration"></div>
-    <p class="dance-med">Dinner & dancing to follow</p>
-
-    <!-- Nikah -->
-    <div class="my-5">
-      <h3>Nikah Ceremony</h3>
-      <p><strong>Date:</strong> Sunday, 21st December 2025</p>
-      <p><strong>Venue:</strong><br>Kapu Kalyana Mandapam, Komaraju Lanka, Ravulapalem</p>
+    <div class="event-section fade-in">
+      <h3 class="event-title">Nikah Ceremony</h3>
+      <div class="event-details">
+        <p><strong>Date:</strong> Sunday, 21st December 2025</p>
+        <p><strong>Venue:</strong> Kapu Kalyana Mandapam, Komaraju Lanka, Ravulapalem</p>
+      </div>
       <div class="countdown" id="nikah-countdown"></div>
-      <div class="countdown-labels"><span>Days</span> | <span>Hours</span> | <span>Minutes</span> | <span>Seconds</span></div><br>
-      <a href="https://maps.app.goo.gl/RCfQWhs69SQgxJha9?g_st=aw" target="_blank" class="btn btn-success">View Nikah Venue</a>
-    </div>
-
-    <!-- Reception -->
-    <div class="my-5">
-      <h3>Reception</h3>
-      <p><strong>Date:</strong> Monday, 22nd December 2025</p>
-      <p><strong>Venue:</strong><br>Lion's Club Function Hall, Mandapeta</p>
-      <div class="countdown" id="reception-countdown"></div>
-      <div class="countdown-labels"><span>Days</span> | <span>Hours</span> | <span>Minutes</span> | <span>Seconds</span></div><br>
-      <a href="https://maps.app.goo.gl/nwwzxgHhwUUQ5V7DA?g_st=aw" target="_blank" class="btn btn-primary">View Reception Venue</a>
-    </div>
-
-    <!-- Download Wedding Card -->
-    <div class="mt-5">
-      <h3>Download Wedding Card</h3>
-      <a href="https://raw.githubusercontent.com/WeddingInvite/BashaWedsBasheera/refs/heads/main/IMG-20250518-WA0005.jpg" download class="btn btn-card">Download Card</a>
-    </div>
-
-    <!-- WhatsApp -->
-    <div class="mt-4">
-      <h5>Reach out to Massod on WhatsApp</h5>
-      <a id="whatsapp-button" href="https://wa.me/919133801421" target="_blank" class="btn btn-whatsapp">
-        <i class="fa fa-whatsapp"></i> WhatsApp: +91 9133801421
+      <a href="https://maps.app.goo.gl/TsRJYAdA9DktV2Md7?g_st=aw" target="_blank" class="btn btn-map">
+        <i class="fas fa-map-marker-alt"></i> View Venue
       </a>
     </div>
 
-    <!-- Blessing Quote -->
-    <blockquote>
-      <p>"May Allah bless your marriage and unite both of you in goodness." – Hadith</p>
+    <div class="event-section fade-in">
+      <h3 class="event-title">Reception</h3>
+      <div class="event-details">
+        <p><strong>Date:</strong> Monday, 22nd December 2025</p>
+        <p><strong>Venue:</strong> Lion's Club Function Hall, Mandapeta</p>
+      </div>
+      <div class="countdown" id="reception-countdown"></div>
+      <a href="https://maps.app.goo.gl/nwwzxgHhwUUQ5V7DA?g_st=aw" target="_blank" class="btn btn-map">
+        <i class="fas fa-map-marker-alt"></i> View Venue
+      </a>
+    </div>
+
+    <div class="text-center my-5 fade-in">
+      <h3 class="event-title">Wedding Invitation Card</h3>
+      <a href="https://raw.githubusercontent.com/WeddingInvite/BashaWedsBasheera/refs/heads/main/IMG-20250518-WA0005.jpg" download class="btn btn-card">
+        <i class="fas fa-download"></i> Download Card
+      </a>
+    </div>
+
+    <div class="text-center my-4 fade-in">
+      <h4>Contact for Details</h4>
+      <a href="https://wa.me/919133801421" target="_blank" class="btn btn-whatsapp">
+        <i class="fab fa-whatsapp"></i> WhatsApp Masood
+      </a>
+    </div>
+
+    <blockquote class="blessing-quote fade-in">
+      "May Allah bless your marriage and unite both of you in goodness." – Hadith
     </blockquote>
   </div>
 
-
-  <!-- Footer -->
-  <footer>
-    <small>© 2025 Shaik Masood & Shaik Rehana | Designed with Love 💖</small>
+  <footer class="fade-in">
+    <small>© 2025 Shaik Masood & Shaik Rehana | With the Grace of Allah</small>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    function initializeCountdown(elementId, targetDate, eventName) {
-      const el = document.getElementById(elementId);
-      const target = new Date(targetDate).getTime();
+    // Scroll Animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('appear');
+          }
+        });
+      }, {
+        threshold: 0.15
+      });
 
-      function update() {
-        const now = new Date().getTime();
-        const diff = target - now;
+      fadeElements.forEach(el => observer.observe(el));
 
-        if (diff <= 0) {
-          el.textContent = `The ${eventName} has taken place!`;
-          clearInterval(timer);
-          return;
+      // Countdown Function
+      function createCountdown(id, targetDate, eventName) {
+        const container = document.getElementById(id);
+        const intervals = ['Days', 'Hours', 'Minutes', 'Seconds'];
+        
+        container.innerHTML = '';
+        intervals.forEach(unit => {
+          const item = document.createElement('div');
+          item.className = 'countdown-item';
+          item.innerHTML = `<div class="countdown-value">00</div><div class="countdown-label">${unit}</div>`;
+          container.appendChild(item);
+        });
+
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const target = new Date(targetDate).getTime();
+          const diff = target - now;
+          
+          if (diff <= 0) {
+            container.innerHTML = `<div style="color:var(--primary-green); font-size:1.6rem; width:100%; text-align:center;">${eventName} has commenced!</div>`;
+            return;
+          }
+          
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+          
+          const values = [days, hours, minutes, seconds];
+          const items = container.querySelectorAll('.countdown-value');
+          
+          items.forEach((item, i) => {
+            item.textContent = values[i].toString().padStart(2, '0');
+          });
         }
 
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        el.textContent = `${days} : ${hours} : ${minutes} : ${seconds}`;
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
       }
 
-      const timer = setInterval(update, 1000);
-      update();
-    }
-
-    initializeCountdown("nikah-countdown", "2025-12-21T11:00:00", "Nikah");
-    initializeCountdown("reception-countdown", "2025-12-22T19:00:00", "Reception");
+      createCountdown("nikah-countdown", "2025-12-21T11:00:00", "Nikah Ceremony");
+      createCountdown("reception-countdown", "2025-12-22T19:00:00", "Reception");
+    });
   </script>
-
-<script src="./script.js"></script>
-
-  <!-- Background Music -->
-  <audio autoplay loop style="position: fixed; bottom: 1rem; left: 1rem; z-index: 999;">
-    <source src="https://cdn.pixabay.com/download/audio/2023/03/21/audio_9c7ff77567.mp3?filename=beautiful-piano-145039.mp3" type="audio/mpeg">
-  </audio>
-
 </body>
 </html>
